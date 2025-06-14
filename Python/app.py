@@ -25,3 +25,9 @@ if uploaded_file:
                 st.success(f"Displaying data from: {selected_sheet}")
                 st.dataframe(df, use_container_width=True)
             except Exception as e:
+                  st.error(f"Error reading selected sheet: {e}")
+
+    except Exception as e:
+        st.error(f"Failed to read Excel file: {e}")
+else:
+    st.info("Please upload an Excel file to begin.")
